@@ -12,8 +12,20 @@ body {
 }
 
 .form-signin {
-  max-width: 330px;
+  max-width: 30rem;
   padding: 15px;
+}
+
+.logo {
+  max-width: 25%;
+}
+
+.form-sign-title {
+  margin-bottom: 2rem;
+}
+
+.empty-div {
+  height: 5%;
 }
 
 .form-signin .form-floating:focus-within {

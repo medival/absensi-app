@@ -10,14 +10,16 @@ class PositionController extends Controller
     public function index()
     {
         return view('positions.index', [
-            "title" => "Jabatan / Posisi"
+            "title" => "Jabatan / Posisi",
+            "icon" => "tag"
         ]);
     }
 
     public function create()
     {
         return view('positions.create', [
-            "title" => "Tambah Data Jabatan / Posisi"
+            "title" => "Tambah Data Jabatan / Posisi",
+            "icon" => "tag"
         ]);
     }
 
@@ -32,6 +34,7 @@ class PositionController extends Controller
 
         return view('positions.edit', [
             "title" => "Edit Data Jabatan / Posisi",
+            "icon" => "tag",
             "positions" => $positions
         ]);
     }

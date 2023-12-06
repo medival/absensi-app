@@ -12,6 +12,7 @@ class DashboardController extends Controller
     {
         return view('dashboard.index', [
             "title" => "Dashboard",
+            "icon" => "home",
             "positionCount" => Position::count(),
             "userCount" => User::count()
         ]);

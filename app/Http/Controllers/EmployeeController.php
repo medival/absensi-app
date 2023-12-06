@@ -10,14 +10,16 @@ class EmployeeController extends Controller
     public function index()
     {
         return view('employees.index', [
-            "title" => "Karyawaan"
+            "title" => "Karyawaan",
+            "icon" => "users",
         ]);
     }
 
     public function create()
     {
         return view('employees.create', [
-            "title" => "Tambah Data Karyawaan"
+            "title" => "Tambah Data Karyawaan",
+            "icon" => "user-plus",
         ]);
     }
 
@@ -35,6 +37,7 @@ class EmployeeController extends Controller
 
         return view('employees.edit', [
             "title" => "Edit Data Karyawaan",
+            "icon" => "users",
             "employees" => $employees
         ]);
     }

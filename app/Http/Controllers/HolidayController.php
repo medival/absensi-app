@@ -10,14 +10,16 @@ class HolidayController extends Controller
     public function index()
     {
         return view('holidays.index', [
-            "title" => "Hari Libur"
+            "title" => "Hari Libur",
+            "icon" => "calendar"
         ]);
     }
 
     public function create()
     {
         return view('holidays.create', [
-            "title" => "Tambah Data Hari Libur"
+            "title" => "Tambah Data Hari Libur",
+            "icon" => "calendar"
         ]);
     }
 
@@ -34,6 +36,7 @@ class HolidayController extends Controller
 
         return view('holidays.edit', [
             "title" => "Edit Data Hari Libur",
+            "icon" => "calendar",
             "holidays" => $holidays
         ]);
     }

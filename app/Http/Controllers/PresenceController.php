@@ -18,6 +18,7 @@ class PresenceController extends Controller
 
         return view('presences.index', [
             "title" => "Daftar Absensi Dengan Kehadiran",
+            "icon" => "activity",
             "attendances" => $attendances
         ]);
     }
@@ -29,6 +30,7 @@ class PresenceController extends Controller
         // dd($qrcode);
         return view('presences.show', [
             "title" => "Data Detail Kehadiran",
+            "icon" => "activity",
             "attendance" => $attendance,
         ]);
     }
@@ -91,6 +93,7 @@ class PresenceController extends Controller
 
         return view('presences.not-present', [
             "title" => "Data Karyawan Tidak Hadir",
+            "icon" => "activity",
             "attendance" => $attendance,
             "notPresentData" => $notPresentData
         ]);
@@ -110,6 +113,7 @@ class PresenceController extends Controller
 
         return view('presences.permissions', [
             "title" => "Data Karyawan Izin",
+            "icon" => "activity",
             "attendance" => $attendance,
             "permissions" => $permissions,
             "date" => $byDate
