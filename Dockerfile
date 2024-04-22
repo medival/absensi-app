@@ -1,42 +1,16 @@
-# Use the official PHP image
-FROM php:8.1
+FROM composer:1.9.0 as build
+WORKDIR /app
+COPY . /app
+RUN composer global require hirak/prestissimo && composer install
 
-# Install system dependencies
-RUN apt-get update && apt-get install -y \
-  libpq-dev \
-  && docker-php-ext-install pdo pdo_pgsql && php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+FROM php:7.3-apache-stretch
+RUN docker-php-ext-install pdo pdo_mysql
 
-RUN apt-get update && apt-get install -y \
-  libpq-dev \
-  zip \
-  unzip \
-  libzip-dev \
-  libpng-dev \
-  && docker-php-ext-install pdo pdo_pgsql zip gd
-
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-
-# Set working directory
-WORKDIR /var/www/html
-
-# Copy only the necessary files for installing dependencies
-COPY composer.json composer.lock ./
-
-# Install composer dependencies
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
-  && composer install --no-scripts --no-autoloader
-
-# Copy the rest of the application
-COPY . .
-
-# Generate autoload files and optimize
-RUN composer dump-autoload --optimize
-
-# Set permissions
-RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
-
-# Expose port 8080
-# EXPOSE 8080
-
-# Use a better command for running the application
-CMD php artisan serve --host=0.0.0.0 --port=$PORT
+EXPOSE 8080
+COPY --from=build /app /var/www/
+COPY docker/000-default.conf /etc/apache2/sites-available/000-default.conf
+# COPY .env.example /var/www/.env
+RUN chmod 777 -R /var/www/storage/ && \
+  echo "Listen 8080" >> /etc/apache2/ports.conf && \
+  chown -R www-data:www-data /var/www/ && \
+  a2enmod rewrite
