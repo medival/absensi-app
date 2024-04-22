@@ -2,9 +2,9 @@
 FROM php:8.1
 
 # Install system dependencies
-# RUN apt-get update && apt-get install -y \
-#   libpq-dev \
-#   && docker-php-ext-install pdo pdo_pgsql && php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+RUN apt-get update && apt-get install -y \
+  libpq-dev \
+  && docker-php-ext-install pdo pdo_pgsql && php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 
 RUN apt-get update && apt-get install -y \
   libpq-dev \
@@ -35,8 +35,8 @@ RUN composer dump-autoload --optimize
 # Set permissions
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
-# Expose port 8000
-EXPOSE 8000
+# Expose port 8080
+# EXPOSE 8080
 
 # Use a better command for running the application
-CMD php artisan serve --host=0.0.0.0 --port=8000
+CMD php artisan serve --host=0.0.0.0 --port=8080

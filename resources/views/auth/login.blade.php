@@ -12,7 +12,7 @@
         <form method="POST" action="{{ route('auth.login') }}" id="login-form" class="w-60 m-auto">
             <div class="form-sign-title text-center">
                 <h3>Silahkan masuk untuk absensi</h1>
-                <img class="logo text-center" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2560px-Google_2015_logo.svg.png" alt="" srcset="">
+                <h2>PT Bejana Cita Settara</h2>
             </div>
 
             <div class="form-floating">

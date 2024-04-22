@@ -62,6 +62,12 @@ body {
   color: inherit;
 }
 
+.sidebar .nav-link:hover {
+  color: whitesmoke;
+  background-color: #2470dc;
+  margin: 2px 0;
+}
+
 .sidebar-heading {
   font-size: .75rem;
 }

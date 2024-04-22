@@ -42,6 +42,7 @@ class PresenceController extends Controller
 
         return view('presences.qrcode', [
             "title" => "Generate Absensi QRCode",
+            "icon" => "activity",
             "qrcode" => $qrcode,
             "code" => $code
         ]);
@@ -53,7 +54,7 @@ class PresenceController extends Controller
         $qrcode = $this->getQrCode($code);
 
         $html = '<img src="' . $qrcode . '" />';
-        return Pdf::loadHTML($html)->setWarnings(false)->download('qrcode.pdf');
+        return Pdf::loadHTML($html)->setWarnings(false)->download('qrcode.svg');
     }
 
     public function getQrCode(?string $code): string
