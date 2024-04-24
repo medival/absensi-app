@@ -140,5 +140,5 @@
 <script>
     const permissionUrl = "{{ route('api.permissions.show') }}";
 </script>
-<script src="{{ asset('js/presences/permissions.js') }}"></script>
+<script src="{{ secure_asset('js/presences/permissions.js') }}"></script>
 @endpush

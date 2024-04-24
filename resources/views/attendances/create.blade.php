@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @push('style')
-<link rel="stylesheet" href="{{ asset('tom-select/tom-select.css') }}">
+<link rel="stylesheet" href="{{ secure_asset('tom-select/tom-select.css') }}">
 @endpush
 
 @section('buttons')
