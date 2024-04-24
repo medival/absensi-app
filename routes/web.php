@@ -22,6 +22,9 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 |
 */
 
+if (env('APP_ENV') === 'production') {
+    URL::forceScheme('https');
+}
 
 Route::middleware('auth')->group(function () {
     Route::middleware('role:admin,operator')->group(function () {
