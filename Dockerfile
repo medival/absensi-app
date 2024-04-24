@@ -3,7 +3,7 @@ FROM composer:latest AS vendor
 WORKDIR /app
 
 COPY database/factories/* database/factories/
-COPY database/seeds/* database/seeds/
+COPY database/seeders/* database/seeders/
 COPY composer.* ./
 
 RUN composer install \
