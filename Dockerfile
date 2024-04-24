@@ -16,7 +16,9 @@ RUN composer install \
   --ansi \
   --no-scripts
 
-FROM php:8.0.14-fpm-alpine3.15
+RUN composer update
+
+FROM php:8.3.3-fpm-alpine
 
 WORKDIR /var/lib/nginx/html/
 
