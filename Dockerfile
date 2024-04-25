@@ -1,4 +1,4 @@
-FROM app:latest
+FROM composer:latest
 
 # Set environment variables
 ARG NGINX_VERSION=1.21.5
