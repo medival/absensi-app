@@ -53,19 +53,22 @@ RUN apk --no-cache add \
   && ln -sf /usr/bin/php81 /usr/bin/php
 
 # Set up directories and permissions
-RUN mkdir -p /run/nginx && \
-  mkdir -p /var/www/html && \
-  chown -R nginx:nginx /var/www/html && \
-  chown -R nginx:nginx /run/nginx
+# RUN mkdir -p /run/nginx && \
+#   mkdir -p /var/www/html && \
+#   chown -R nginx:nginx /var/www/html && \
+#   chown -R nginx:nginx /run/nginx
 
-COPY . /var/www/html
+# COPY . /var/www/html
 
 # Copy Nginx configuration
-COPY nginx.conf /etc/nginx/nginx.conf
-COPY default.conf /etc/nginx/conf.d/default.conf
+# COPY nginx.conf /etc/nginx/nginx.conf
+# COPY default.conf /etc/nginx/conf.d/default.conf
 
 # Copy Supervisor configuration
-COPY supervisord.conf /etc/supervisord.conf
+# COPY supervisord.conf /etc/supervisord.conf
+
+WORKDIR /app
+COPY  . .
 
 # Expose ports
 # EXPOSE 8080
