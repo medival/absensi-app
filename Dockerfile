@@ -7,7 +7,6 @@ ARG SUPERVISOR_VERSION=4.2.2
 
 # Install necessary packages
 RUN apk --no-cache add \
-  nginx \
   curl \
   git \
   grep \
