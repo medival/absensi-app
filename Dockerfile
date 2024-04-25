@@ -31,5 +31,8 @@ COPY docker/default.conf /etc/nginx/http.d/default.conf
 COPY --from=vendor /app/vendor ./vendor
 COPY --chown=www-data:www-data . ./
 
+# CMD sh /var/lib/nginx/html/docker/startup.sh
+
 RUN cd /var/lib/nginx/html/
+
 CMD php artisan serve --host=0.0.0.0 --port=$PORT
