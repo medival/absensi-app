@@ -32,4 +32,4 @@ COPY --from=vendor /app/vendor ./vendor
 COPY --chown=www-data:www-data . ./
 
 RUN cd /var/lib/nginx/html/
-CMD php artisan --serve=0.0.0.0 --port=$PORT
+CMD php artisan serve --host=0.0.0.0 --port=$PORT
