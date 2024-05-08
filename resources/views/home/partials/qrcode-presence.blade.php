@@ -77,10 +77,10 @@
 </div>
 
 @push('script')
-<script src="{{ secure_asset('html5-qrcode/html5-qrcode.min.js') }}"></script>
+<script src="{{ asset('html5-qrcode/html5-qrcode.min.js') }}"></script>
 <script>
     const enterPresenceUrl = "{{ route('home.sendEnterPresenceUsingQRCode') }}";
     const outPresenceUrl = "{{ route('home.sendOutPresenceUsingQRCode') }}";
 </script>
-<script type="module" src="{{ secure_asset('js/home/qrcode.js') }}"></script>
+<script type="module" src="{{ asset('js/home/qrcode.js') }}"></script>
 @endpush

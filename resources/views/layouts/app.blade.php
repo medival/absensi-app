@@ -1,7 +1,7 @@
 @extends('layouts.base')
 
 @push('style')
-<link rel="stylesheet" href="{{ secure_asset('css/app.css') }}">
+<link rel="stylesheet" href="{{ asset('css/app.css') }}">
 @endpush
 
 @section('base')

@@ -1,7 +1,7 @@
 @extends('layouts.auth')
 
 @push('style')
-<link rel="stylesheet" href="{{ secure_asset('css/auth/login.css') }}">
+<link rel="stylesheet" href="{{ asset('css/auth/login.css') }}">
 @endpush
 
 @section('content')
@@ -37,5 +37,5 @@
 @endsection
 
 @push('script')
-<script type="module" src="{{ secure_asset('js/auth/login.js') }}"></script>
+<script type="module" src="{{ asset('js/auth/login.js') }}"></script>
 @endpush

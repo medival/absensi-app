@@ -59,6 +59,6 @@
 @endsection
 
 @push('script')
-<script src="{{ secure_asset('jquery/jquery-3.6.0.min.js') }}"></script>
+<script src="{{ asset('jquery/jquery-3.6.0.min.js') }}"></script>
 @powerGridScripts
 @endpush
