@@ -11,7 +11,7 @@
     <main class="form-signin w-100 m-auto">
         <form method="POST" action="{{ route('auth.login') }}" id="login-form" class="w-60 m-auto">
             <div class="form-sign-title text-center">
-                <h3>Silahkan masuk untuk absensi</h1>
+                <h3>Silahkan masuk untuk absensi Admin dan Karyawan</h1>
                 <h2>PT Bejana Cita Settara</h2>
             </div>
 
