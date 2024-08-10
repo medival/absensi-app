@@ -20,7 +20,7 @@
                 <a class="nav-link mt-2 mb-2 {{ request()->routeIs('employees.*') ? 'active' : '' }}"
                     href="{{ route('employees.index') }}">
                     <span data-feather="users" class="align-text-bottom"></span>
-                    Karyawaan
+                    karyawan
                 </a>
             </li>
             <li class="nav-item">

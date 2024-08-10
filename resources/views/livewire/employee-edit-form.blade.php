@@ -7,13 +7,13 @@
             <div class="w-100">
                 <div class="mb-3">
                     <x-form-label id="name{{ $employee['id'] }}"
-                        label="Nama Karyawaan {{ $loop->iteration }} (ID: {{ $employee['id'] }})" />
+                        label="Nama karyawan {{ $loop->iteration }} (ID: {{ $employee['id'] }})" />
                     <x-form-input id="name{{ $employee['id'] }}" name="name{{ $employee['id'] }}"
                         wire:model.defer="employees.{{ $loop->index }}.name" />
                     <x-form-error key="employees.{{ $loop->index }}.name" />
                 </div>
                 <div class="mb-3">
-                    <x-form-label id="email{{ $employee['id'] }}" label='Email Karyawaan {{ $loop->iteration }}' />
+                    <x-form-label id="email{{ $employee['id'] }}" label='Email karyawan {{ $loop->iteration }}' />
                     <x-form-input id="email{{ $employee['id'] }}" name="email{{ $employee['id'] }}" type="email"
                         wire:model.defer="employees.{{ $loop->index }}.email" placeholder="Email aktif" />
                     <x-form-error key="employees.{{ $loop->index }}.email" />
@@ -25,14 +25,14 @@
                     <x-form-error key="employees.{{ $loop->index }}.phone" />
                 </div>
                 <div class="mb-3">
-                    <x-form-label id="password{{ $employee['id'] }}" label='Password hanya bisa diubah oleh karyawaan'
+                    <x-form-label id="password{{ $employee['id'] }}" label='Password hanya bisa diubah oleh karyawan'
                         required="false" />
                     <x-form-input id="password{{ $employee['id'] }}" name="password{{ $employee['id'] }}" disabled
                         required="false" />
                 </div>
                 <div class="mb-3">
                     <x-form-label id="position_id{{ $employee['id'] }}"
-                        label='Jabatan / Posisi Karyawaan {{ $loop->iteration }}' />
+                        label='Jabatan / Posisi karyawan {{ $loop->iteration }}' />
                     <select class="form-select" aria-label="Default select example" name="position_id"
                         wire:model.defer="employees.{{ $loop->index }}.position_id">
                         <option selected disabled>-- Pilih Role --</option>

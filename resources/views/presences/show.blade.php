@@ -13,7 +13,7 @@
                 <h6 class="card-subtitle mb-2 text-muted">{{ $attendance->description }}</h6>
                 <div class="d-flex align-items-center gap-2">
                     @include('partials.attendance-badges')
-                    <a href="{{ route('presences.permissions', $attendance->id) }}" class="badge text-bg-info">Karyawaan
+                    <a href="{{ route('presences.permissions', $attendance->id) }}" class="badge text-bg-info">karyawan
                         Izin</a>
                     <a href="{{ route('presences.not-present', $attendance->id) }}" class="badge text-bg-danger">Belum
                         Absen</a>
